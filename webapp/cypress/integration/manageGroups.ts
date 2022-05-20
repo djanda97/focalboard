@@ -53,4 +53,18 @@ describe('Manage groups', () => {
             cy.get('.Label.propColorGreen').should('exist')
         })
     })
+
+    it('MM-T4287 Hiding/unhiding a group', () => {
+        // Step 1: Create an empty board and add a group
+
+        // Step 2: Click on the three dots next to "Group 1"
+        // Expected: Dropdown opens with Hide, Delete and color options
+
+        // Step 3: Click on "Hide"
+        // Expected: "Group 1" is now shown under "Hiden columns" with the card count (3) next to it and the cards hidden
+
+        // Step 4: Click "Group 1", then click "Show" in the dropdown
+        // Expected: Group 1 is restored with all the cards listed below it
+
+    })
 })
