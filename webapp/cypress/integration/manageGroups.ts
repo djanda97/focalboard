@@ -53,32 +53,4 @@ describe('Manage groups', () => {
             cy.get('.Label.propColorGreen').should('exist')
         })
     })
-
-    it('MM-T4286 Card creation and count', () => {
-        // Step 1: Create an empty board and add a group
-        cy.visit('/')
-        cy.uiCreateEmptyBoard()
-
-        cy.contains('+ Add a group').click({force: true})
-        cy.get('.KanbanColumnHeader .Editable[value=\'New group\']').should('exist')
-
-        // Step 2: Click on "+ New" in "Group 1" column
-        cy.contains('+ New').click({force: true})
-
-        // Step 3: Hover your mouse over the new card and click on the "..." menu
-        cy.get('.card').trigger('mouseover')
-        cy.contains('...').click({force: true})
-
-        // Step 4: Click "Duplicate"
-        cy.contains('Duplicate').click({force: true})
-
-        // Step 5: Observe the card count next to the group name
-        // Card count should be 2
-
-        // Step 6: Click on the "..." menu on one of the cards and click "Delete"
-        cy.contains('...').click({force: true})
-        cy.contains('Delete').click({force: true})
-        // Card count should be 1
-
-    })
 })
